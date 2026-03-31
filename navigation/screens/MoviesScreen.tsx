@@ -1,6 +1,6 @@
 import React from 'react';
 import SpiderCollectionScreen from '../../components/SpiderCollectionScreen';
-import { getMovies } from '../../api/collectionsApi';
+import { getMovies } from '../../api/data/collections';
 
 const MoviesScreen = () => {
   return (

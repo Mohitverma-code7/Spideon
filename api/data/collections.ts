@@ -1,5 +1,5 @@
-import type { CollectionItem } from '../types/content';
-import { getSpiderHeroes } from './spiderApi';
+import type { CollectionItem } from '../../types/content';
+import { getSpiderHeroes } from '../spiderApi';
 
 const movies: CollectionItem[] = [
   {
