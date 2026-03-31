@@ -31,7 +31,6 @@ const CollectionDetailScreen = ({ route }: CollectionDetailScreenProps) => {
         <Image
           source={item.localImage || { uri: item.imageUrl }}
           style={styles.heroImage}
-          resizeMode="cover"
         />
         <View style={styles.heroOverlay} />
         <View style={styles.floatingHeader}>
@@ -65,7 +64,7 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
     },
     content: {
       paddingTop: 14,
-      paddingBottom: 42,
+      paddingBottom: 102,
     },
     heroWrap: {
       position: 'relative',
@@ -127,7 +126,7 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       maxWidth: '90%',
     },
     panel: {
-      marginTop: -26,
+      marginTop: 26,
       marginHorizontal: 16,
       backgroundColor: theme.colors.surface,
       borderRadius: 30,

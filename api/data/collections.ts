@@ -9,7 +9,7 @@ const movies: CollectionItem[] = [
     description:
       'The 2002 film that brought Spider-Man to a new generation and turned comic-book movies into major event cinema.',
     meta: '2002 - Tobey Maguire Era',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/6/6c/Spider-Man_%282002_film%29_poster.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNo7b9GKEUiZua6y8YJEqvZSgeSt1xrw7EN7qtWq8R5I1QxtZ2lz5hiFoD1IbVRXBVGW0HKvaIzKs7WeYb4tHE4txay0yA2yt3XY26Q&s=10',
     link: 'https://en.wikipedia.org/wiki/Spider-Man_(2002_film)',
     linkLabel: 'Open Movie Page',
     badge: 'Film',
@@ -21,7 +21,7 @@ const movies: CollectionItem[] = [
     description:
       'A character-driven sequel with Doctor Octopus, emotional stakes, and some of the most iconic Spider-Man scenes on film.',
     meta: '2004 - Raimi Sequel',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/4/4e/Spider-Man_2_USA_poster.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAiXPhchG3ath8M7kpi2cV92dMVICO8VoomOp3JMYCLt5npMSST4H1AJHXYwhGyTEXIMXIiA&s=10',
     link: 'https://en.wikipedia.org/wiki/Spider-Man_2',
     linkLabel: 'Open Movie Page',
     badge: 'Film',
@@ -33,7 +33,7 @@ const movies: CollectionItem[] = [
     description:
       'Tom Holland\'s first solo MCU outing balances school-life chaos, Tony Stark pressure, and grounded Spider-Man action.',
     meta: '2017 - MCU',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/f/f9/Spider-Man_Homecoming_poster.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRAui4j_CP5JitmzERck2NTzo3pgk7OWDttnMIAn3EQjAzLUqA',
     link: 'https://en.wikipedia.org/wiki/Spider-Man:_Homecoming',
     linkLabel: 'Open Movie Page',
     badge: 'MCU',
@@ -45,7 +45,7 @@ const movies: CollectionItem[] = [
     description:
       'A visually explosive animated film that redefined what Spider-Man stories could look and feel like on screen.',
     meta: '2018 - Animated',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/f/fa/Spider-Man_Into_the_Spider-Verse_poster.png',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDDvJ0zhGxVySz3RjLa35ukjpctxW41KzD3VQ56VzSEX2lB5WHZ0le10IjuI8ZJ9cd5CeZpA&s=10',
     link: 'https://en.wikipedia.org/wiki/Spider-Man:_Into_the_Spider-Verse',
     linkLabel: 'Open Movie Page',
     badge: 'Animated',
@@ -57,7 +57,7 @@ const movies: CollectionItem[] = [
     description:
       'A larger, more chaotic sequel that brought Venom, Sandman, and the symbiote suit into the spotlight.',
     meta: '2007 - Raimi Finale',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/7/7a/Spider-Man_3%2C_International_Poster.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/M/MV5BODE2NzNhMDctYjUzMC00Y2M5LWI2Y2EtODJkZTFjN2Y5ODlmXkEyXkFqcGc@._V1_.jpg',
     link: 'https://en.wikipedia.org/wiki/Spider-Man_3',
     linkLabel: 'Open Movie Page',
     badge: 'Film',
@@ -69,7 +69,7 @@ const movies: CollectionItem[] = [
     description:
       'A reboot with a sleeker suit, more grounded romance, and a new cinematic version of Peter Parker.',
     meta: '2012 - Reboot',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
+    imageUrl: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRqlZRtoH1B3Wj5_29Dr-BXIBL0_tNMULEA6ruBRQ4SYM4VCZbV',
     link: 'https://en.wikipedia.org/wiki/The_Amazing_Spider-Man_(film)',
     linkLabel: 'Open Movie Page',
     badge: 'Film',
@@ -81,7 +81,7 @@ const movies: CollectionItem[] = [
     description:
       'A visually energetic sequel with larger stakes, bigger set pieces, and one of Spider-Man film history\'s most emotional endings.',
     meta: '2014 - Garfield Era',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/2/24/The_Amazing_Spider-Man_2_poster.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5hz26jzp7FFdSsyjlYF5JJEtwywZZ91x9EoLfk9adkXQwOQY0tBnFJMf79ef9LpV18Z5R9DOOgninV9gZWxrITAaSLvySEjn3cGzNu-w&s=10',
     link: 'https://en.wikipedia.org/wiki/The_Amazing_Spider-Man_2',
     linkLabel: 'Open Movie Page',
     badge: 'Film',
@@ -93,7 +93,7 @@ const movies: CollectionItem[] = [
     description:
       'A global-school-trip Spider-Man story that mixes grief, illusion, and spectacle in a post-Endgame MCU world.',
     meta: '2019 - MCU',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/b/bd/Spider-Man_Far_From_Home_poster.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/M/MV5BMzNhNTE0NWQtN2E1Ny00NjcwLTg1YTctMGY1NmMwODJmY2NmXkEyXkFqcGc@._V1_.jpg',
     link: 'https://en.wikipedia.org/wiki/Spider-Man:_Far_From_Home',
     linkLabel: 'Open Movie Page',
     badge: 'MCU',
@@ -105,7 +105,7 @@ const movies: CollectionItem[] = [
     description:
       'A nostalgia-heavy, crowd-pleasing crossover that united multiple Spider-Man film eras into one event movie.',
     meta: '2021 - MCU',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/0/00/Spider-Man_No_Way_Home_poster.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7iQ2s1EI_UIr7EJjI0cO0BmxrzVggyJdg8PbFmterQ50qnkFfNZROboVoSuHnn46-lZ6ZBXOtS2U7KIZQiYfLBPBmbfp7azyifrckoA&s=10',
     link: 'https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home',
     linkLabel: 'Open Movie Page',
     badge: 'MCU',
@@ -117,56 +117,10 @@ const movies: CollectionItem[] = [
     description:
       'A visually dense animated sequel with bigger emotional stakes, bolder style, and a far more expansive Spider society.',
     meta: '2023 - Animated',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Spider-Man-_Across_the_Spider-Verse_poster.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAf_MyXPJnX5JpSrorysxmntevlyS1RAq-WSyD3rjIuQ8pTKDB06_B2gS_K_hbyuv515sHoNH5jhv39_dsetHTEnzRQfSOwXV7HRAuwxA&s=10',
     link: 'https://en.wikipedia.org/wiki/Spider-Man:_Across_the_Spider-Verse',
     linkLabel: 'Open Movie Page',
     badge: 'Animated',
-  },
-  {
-    id: 'movie-venom',
-    title: 'Venom',
-    subtitle: 'The symbiote story spins into its own franchise',
-    description:
-      'A darker antihero spin-off focused on Eddie Brock and the alien symbiote dynamic that fans had wanted to see expanded.',
-    meta: '2018 - Spin-off',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/1/10/Venom_%282018_film%29_poster.png',
-    link: 'https://en.wikipedia.org/wiki/Venom_(2018_film)',
-    linkLabel: 'Open Movie Page',
-    badge: 'Spin-off',
-  },
-  {
-    id: 'movie-venom-2',
-    title: 'Venom: Let There Be Carnage',
-    subtitle: 'Carnage brings chaos to the symbiote franchise',
-    description: 'A faster, wilder follow-up centered on the clash between Venom and Carnage.',
-    meta: '2021 - Spin-off',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/a/a7/Venom_Let_There_Be_Carnage_poster.jpg',
-    link: 'https://en.wikipedia.org/wiki/Venom:_Let_There_Be_Carnage',
-    linkLabel: 'Open Movie Page',
-    badge: 'Spin-off',
-  },
-  {
-    id: 'movie-morbius',
-    title: 'Morbius',
-    subtitle: 'A darker corner of Spider-adjacent cinema',
-    description:
-      'A vampire-leaning Marvel spin-off that expands the wider Spider-Man film orbit in a more gothic direction.',
-    meta: '2022 - Spin-off',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/2/2f/Morbius_%28film%29_poster.jpg',
-    link: 'https://en.wikipedia.org/wiki/Morbius_(film)',
-    linkLabel: 'Open Movie Page',
-    badge: 'Spin-off',
-  },
-  {
-    id: 'movie-kraven',
-    title: 'Kraven the Hunter',
-    subtitle: 'A villain-focused Spider universe project',
-    description: 'A hunter-driven action film built around one of Spider-Man\'s most iconic enemies.',
-    meta: 'Villain Feature',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/e/ec/Kraven_the_Hunter_%28film%29_poster.jpg',
-    link: 'https://en.wikipedia.org/wiki/Kraven_the_Hunter_(film)',
-    linkLabel: 'Open Movie Page',
-    badge: 'Villain',
   },
   {
     id: 'movie-madam-web',
@@ -175,7 +129,7 @@ const movies: CollectionItem[] = [
     description:
       'A Spider-related character film that leans into prophecy, psychic vision, and future Spider connections.',
     meta: '2024 - Spin-off',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/f/f0/Madame_Web_%28film%29_poster.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdZw_UEsuvgsYUhI1fCMRQTrTtk0eeZuRX2n9kG1cXwFCWhlRVZpWYGvl_vl1-OGbqJoLJ&s=10',
     link: 'https://en.wikipedia.org/wiki/Madame_Web_(film)',
     linkLabel: 'Open Movie Page',
     badge: 'Spin-off',
@@ -190,7 +144,7 @@ const comics: CollectionItem[] = [
     description:
       'The origin issue that launched Peter Parker into Marvel history and set the tone for every Spider story after it.',
     meta: '1962 - Origin Story',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/5/56/Amazing_Adult_Fantasy_issue_7.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd4s-KaBWYjv-j4OA6l47eLlU3qrjQessErg&s',
     link: 'https://en.wikipedia.org/wiki/Amazing_Fantasy#Issue_15_and_Spider-Man',
     linkLabel: 'Read About Issue',
     badge: 'Classic',
@@ -202,7 +156,7 @@ const comics: CollectionItem[] = [
     description:
       'A fan-favorite issue with a sharper edge that helped widen the Spider-Man world into darker territory.',
     meta: '1974 - Key Issue',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/d/d3/Amazing_Spider-Man_129.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTshF3o3frhHT8rYkDiLsXwMYmRILVQZzL4eg&s',
     link: 'https://en.wikipedia.org/wiki/The_Amazing_Spider-Man',
     linkLabel: 'Series Page',
     badge: 'Key Run',
@@ -214,7 +168,7 @@ const comics: CollectionItem[] = [
     description:
       'The crossover event that brought together countless Spider variants and inspired the modern Spider-Verse craze.',
     meta: '2014 - Event Story',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/5/53/Amazing_Spider-Man_vol.3_-9.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/81fdOe6LbdL.jpg',
     link: 'https://en.wikipedia.org/wiki/Spider-Verse',
     linkLabel: 'Open Story Info',
     badge: 'Event',
@@ -226,7 +180,7 @@ const comics: CollectionItem[] = [
     description:
       'One of the most accessible Spider-Man runs, praised for character writing and long-form storytelling.',
     meta: '2000 - Modern Run',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/9/96/Ultimate_Spider-Man_%28October_2000%29_-1.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPjGOlz4vCHshLeKNOqjsdmt2ShoRe8lckog&s',
     link: 'https://en.wikipedia.org/wiki/Ultimate_Spider-Man',
     linkLabel: 'Open Run',
     badge: 'Modern',
@@ -238,7 +192,7 @@ const comics: CollectionItem[] = [
     description:
       'A psychological and visually memorable storyline that pushed Spider-Man into one of his most intense comic arcs.',
     meta: '1987 - Classic Arc',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Kraven%27s_Last_Hunt.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/61x8236W+FL._UF1000,1000_QL80_.jpg',
     link: 'https://en.wikipedia.org/wiki/Kraven%27s_Last_Hunt',
     linkLabel: 'Open Arc',
     badge: 'Classic',
@@ -250,7 +204,7 @@ const comics: CollectionItem[] = [
     description:
       'A deeply personal retelling focused on memory, love, and the emotional history of Peter and Gwen.',
     meta: '2002 - Emotional Story',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/0/0b/Spider-manbluecover.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAAlynJB8jerIB2ER3YG_Z3B_i3FAuN_yv8A&s',
     link: 'https://en.wikipedia.org/wiki/Spider-Man:_Blue',
     linkLabel: 'Open Story',
     badge: 'Drama',
@@ -262,7 +216,7 @@ const comics: CollectionItem[] = [
     description:
       'A sprawling era packed with doubles, confusion, reinvention, and major status changes in Spider continuity.',
     meta: '1990s - Saga',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/f/f3/Spider-Man_Clone_Saga_Omnibus_cover.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Fpmij9L0pNPw3Svdsk_YIDht-jAxwWT4XQ&s',
     link: 'https://en.wikipedia.org/wiki/Clone_Saga',
     linkLabel: 'Open Saga',
     badge: 'Saga',
@@ -274,7 +228,7 @@ const comics: CollectionItem[] = [
     description:
       'A post-Civil War Spider-Man storyline that brought back the black suit aesthetic with heavier emotional stakes.',
     meta: '2007 - Modern Arc',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/1/1b/Spider-Man_Back_in_Black_cover.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71L8hiWLgAL._UF1000,1000_QL80_.jpg',
     link: 'https://en.wikipedia.org/wiki/Spider-Man:_Back_in_Black',
     linkLabel: 'Open Arc',
     badge: 'Modern',
@@ -286,7 +240,7 @@ const comics: CollectionItem[] = [
     description:
       'A breakout alternate-universe title that gave Gwen a unique visual identity and strong standalone momentum.',
     meta: '2015 - Alternate Universe',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/8/82/Spider-Gwen_Vol_1_1.jpg',
+    imageUrl: 'https://i.pinimg.com/736x/f5/af/3d/f5af3d0576adc0d84b5b4ff58f0514e4.jpg',
     link: 'https://en.wikipedia.org/wiki/Spider-Gwen',
     linkLabel: 'Open Series',
     badge: 'Multiverse',
@@ -297,7 +251,7 @@ const comics: CollectionItem[] = [
     subtitle: 'A newer Spider voice takes center stage',
     description: 'Miles brings a different rhythm, energy, and emotional perspective to the Spider mantle.',
     meta: 'Modern - Miles Era',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/2/29/Miles_Morales_Spider-Man_Vol_1_1.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tRZKkxqBCtjS7RsYNokVRH5wcrtaKnIh5g&s',
     link: 'https://en.wikipedia.org/wiki/Miles_Morales',
     linkLabel: 'Open Character',
     badge: 'Miles',
@@ -309,7 +263,7 @@ const comics: CollectionItem[] = [
     description:
       'A bold status-quo shakeup where Spider-Man looked familiar on the outside but felt radically different within.',
     meta: '2013 - Status Quo Shift',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/b/ba/Superior_Spider-Man_1.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/812-2Ac1GiL._UF1000,1000_QL80_.jpg',
     link: 'https://en.wikipedia.org/wiki/The_Superior_Spider-Man',
     linkLabel: 'Open Series',
     badge: 'Bold',
@@ -320,7 +274,7 @@ const comics: CollectionItem[] = [
     subtitle: 'Miguel O\'Hara defines the future',
     description: 'A stylish futuristic reimagining of Spider-Man with a different city, tone, and edge.',
     meta: '1992 - Future Spider',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/6/63/Spider-Man_2099_%28vol._1%29_1.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/61s7lbKAp0L._UF1000,1000_QL80_.jpg',
     link: 'https://en.wikipedia.org/wiki/Spider-Man_2099',
     linkLabel: 'Open Series',
     badge: '2099',
@@ -332,7 +286,7 @@ const comics: CollectionItem[] = [
     description:
       'A loud, violent crossover event that became one of the defining Carnage-era Spider stories.',
     meta: '1993 - Carnage Event',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/1/17/Amazing_Spider-Man_378.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/91RXIvqK6NL._UF1000,1000_QL80_.jpg',
     link: 'https://en.wikipedia.org/wiki/Maximum_Carnage',
     linkLabel: 'Open Event',
     badge: 'Carnage',
@@ -344,7 +298,7 @@ const comics: CollectionItem[] = [
     description:
       'Silk expanded the Spider family with a fresh heroine, different dynamics, and a distinct visual tone.',
     meta: 'Modern - Spider Family',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/8/8b/Silk_1.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/91Pzix3i0gL._UF1000,1000_QL80_.jpg',
     link: 'https://en.wikipedia.org/wiki/Silk_(comics)',
     linkLabel: 'Open Character',
     badge: 'Silk',
@@ -356,7 +310,7 @@ const comics: CollectionItem[] = [
     description:
       'A fan-favorite alternate Spider timeline where Peter, MJ, and Annie become a full superhero family.',
     meta: 'Alternate - Family Story',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/5/58/Amazing_Spider-Man_Renew_Your_Vows.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/A1tQAPfllkL._UF1000,1000_QL80_.jpg',
     link: 'https://en.wikipedia.org/wiki/The_Amazing_Spider-Man:_Renew_Your_Vows',
     linkLabel: 'Open Story',
     badge: 'Family',
@@ -371,7 +325,7 @@ const costumes: CollectionItem[] = [
     description:
       'Bright, athletic, and instantly recognizable. This is the suit language that defined Spider-Man for decades.',
     meta: 'Signature Suit',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/620-spider-man.jpg',
+    imageUrl: 'https://i.pinimg.com/1200x/ac/19/1d/ac191d1d0a55afd4abe7540633d9651e.jpg',
     badge: 'Iconic',
   },
   {
@@ -381,7 +335,7 @@ const costumes: CollectionItem[] = [
     description:
       'A sharper, moodier suit direction that became one of the most requested Spider-Man looks across media.',
     meta: 'Fan Favorite',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/687-venom.jpg',
+    imageUrl: 'https://i.pinimg.com/1200x/85/7d/83/857d834524ebe1e07e44424c85aaaebe.jpg',
     badge: 'Dark',
   },
   {
@@ -391,7 +345,7 @@ const costumes: CollectionItem[] = [
     description:
       'A metallic upgrade with a more engineered presence, blending Spider agility with Stark design language.',
     meta: 'Tech Suit',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/577-scarlet-spider.jpg',
+    imageUrl: 'https://i.pinimg.com/736x/46/31/ce/4631ce05375d32bdbbe3be3710d36839.jpg',
     badge: 'Tech',
   },
   {
@@ -400,7 +354,7 @@ const costumes: CollectionItem[] = [
     subtitle: 'Future-forward and razor sharp',
     description: 'A bold navy-and-red costume that brings a completely different energy to Spider-Man design.',
     meta: 'Future Variant',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/619-spider-gwen.jpg',
+    imageUrl: 'https://i.pinimg.com/1200x/67/74/4f/67744f589816273753a93ca5ef367c6c.jpg',
     badge: 'Future',
   },
   {
@@ -410,7 +364,7 @@ const costumes: CollectionItem[] = [
     description:
       'A more stripped-back suit direction that feels rougher, more rebellious, and instantly recognizable.',
     meta: 'Street Variant',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/577-scarlet-spider.jpg',
+    imageUrl: 'https://i.pinimg.com/1200x/2c/cd/67/2ccd679376b08f5ef19ab3922100298a.jpg',
     badge: 'Street',
   },
   {
@@ -420,7 +374,7 @@ const costumes: CollectionItem[] = [
     description:
       'A later Scarlet take with a more refined silhouette and stronger high-tech suit energy.',
     meta: 'Clone Variant',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/578-scarlet-spider-ii.jpg',
+    imageUrl: 'https://i.pinimg.com/736x/32/66/94/3266948f55f38c2b83a3ed8c0d1c4171.jpg',
     badge: 'Clone',
   },
   {
@@ -430,18 +384,8 @@ const costumes: CollectionItem[] = [
     description:
       'One of the most distinct modern Spider looks, with a design language that feels stylish and unmistakable.',
     meta: 'Modern Variant',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/619-spider-gwen.jpg',
+    imageUrl: 'https://i.pinimg.com/736x/f4/7d/1b/f47d1b34c2988f10a33f77c33e966d4c.jpg',
     badge: 'Gwen',
-  },
-  {
-    id: 'costume-girl',
-    title: 'Spider-Girl',
-    subtitle: 'Legacy energy with a brighter silhouette',
-    description:
-      'A lighter and more legacy-driven costume direction that still keeps the Spider rhythm intact.',
-    meta: 'Legacy Suit',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/618-spider-girl.jpg',
-    badge: 'Legacy',
   },
   {
     id: 'costume-woman',
@@ -450,7 +394,7 @@ const costumes: CollectionItem[] = [
     description:
       'A different but iconic branch of Spider styling with stronger contrast and a distinct silhouette.',
     meta: 'Classic Variant',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/623-spider-woman.jpg',
+    imageUrl: 'https://i.pinimg.com/1200x/06/a9/ae/06a9aee6e0d232d85ce7ecbe250cef14.jpg',
     badge: 'Classic',
   },
   {
@@ -460,28 +404,8 @@ const costumes: CollectionItem[] = [
     description:
       'A more niche spider-family look that still adds variety to the visual costume archive.',
     meta: 'Rare Variant',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/625-spider-woman-iii.jpg',
+    imageUrl: 'https://i.pinimg.com/736x/57/7a/44/577a4411423b9a37dcb70936c73e23cc.jpg',
     badge: 'Rare',
-  },
-  {
-    id: 'costume-stealth',
-    title: 'Stealth Spider Style',
-    subtitle: 'Dark tactical Spider energy',
-    description:
-      'A stealth-inspired visual lane focused on darker tones, quieter presence, and mission-ready feel.',
-    meta: 'Tactical Style',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/687-venom.jpg',
-    badge: 'Stealth',
-  },
-  {
-    id: 'costume-classic-alt',
-    title: 'Classic Suit Variant',
-    subtitle: 'The evergreen Spider-Man visual formula',
-    description:
-      'A celebration of the original red-and-blue design that still defines Spider-Man across comics, games, and film.',
-    meta: 'Evergreen',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/620-spider-man.jpg',
-    badge: 'Essential',
   },
 ];
 
