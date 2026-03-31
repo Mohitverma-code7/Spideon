@@ -4,6 +4,7 @@ import { RouteProp } from '@react-navigation/native';
 import { useAppTheme } from '../../theme/ThemeProvider';
 import type { CollectionStackParamList } from '../CollectionStackNavigator';
 
+
 type CollectionDetailScreenProps = {
   route: RouteProp<CollectionStackParamList, 'CollectionDetail'>;
 };
@@ -24,6 +25,8 @@ const CollectionDetailScreen = ({ route }: CollectionDetailScreenProps) => {
     }
   };
 
+  
+
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
       <View style={styles.heroWrap}>
@@ -43,7 +46,7 @@ const CollectionDetailScreen = ({ route }: CollectionDetailScreenProps) => {
 
       <View style={styles.panel}>
         <Text style={styles.meta}>{item.meta}</Text>
-        <Text style={styles.description}>{item.description}</Text>
+        <Text style={styles.description} numberOfLines={5}>{item.description}</Text>
 
         {item.link ? (
           <Pressable style={styles.linkButton} onPress={openLink}>

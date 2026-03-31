@@ -35,8 +35,8 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
     button: {
       backgroundColor: theme.mode === 'dark' ? '#05070D' : '#F4F7FB',
       borderRadius: 999,
-      width: 56,
-      height: 56,
+      width: 46,
+      height: 46,
       borderWidth: 1,
       borderColor: theme.colors.border,
       alignItems: 'center',
@@ -46,6 +46,7 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       shadowRadius: 14,
       shadowOffset: { width: 0, height: 8 },
       elevation: 6,
+      marginBottom: 12,
     },
     iconShell: {
       width: 36,

@@ -112,7 +112,7 @@ const SpiderCollectionScreen = ({
         <Text style={styles.subtitle}>{subtitle}</Text>
 
         <View style={styles.searchWrapper}>
-          <Text style={styles.searchLabel}>Find</Text>
+          <Text style={styles.searchLabel}></Text>
           <TextInput
             placeholder="Search this collection..."
             placeholderTextColor={theme.colors.textMuted}
@@ -125,11 +125,11 @@ const SpiderCollectionScreen = ({
         <View style={styles.statsRow}>
           <View style={styles.statCard}>
             <Text style={styles.statValue}>{items.length}</Text>
-            <Text style={styles.statLabel}>Items</Text>
+            <Text style={styles.statLabel}>   Items</Text>
           </View>
           <View style={styles.statCard}>
             <Text style={styles.statValue}>{filteredItems.length}</Text>
-            <Text style={styles.statLabel}>Visible</Text>
+            <Text style={styles.statLabel}>   Visible</Text>
           </View>
         </View>
       </View>
@@ -313,10 +313,15 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
     },
     statsRow: {
       flexDirection: 'row',
-      gap: 12,
+      gap: 14,
+      padding: 8,
+      justifyContent: 'center',
     },
     statCard: {
-      flex: 1,
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
       backgroundColor: theme.mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.8)',
       borderRadius: 22,
       padding: 16,
@@ -333,6 +338,7 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       marginTop: 6,
       fontSize: 13,
       fontWeight: '700',
+      padding: 4,
     },
     sectionHeader: {
       marginBottom: 18,
