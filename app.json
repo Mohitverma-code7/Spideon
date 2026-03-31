@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "Spideon",
+    "slug": "Spideon",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {}
+  }
+}
