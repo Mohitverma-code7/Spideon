@@ -31,8 +31,9 @@ const CollectionDetailScreen = ({ route }: CollectionDetailScreenProps) => {
         <Image
           source={item.localImage || { uri: item.imageUrl }}
           style={styles.heroImage}
+          resizeMode="cover"
         />
-        <View style={styles.heroOverlay} />
+
         <View style={styles.floatingHeader}>
           <Text style={styles.badge}>{item.badge || 'Spider-Verse'}</Text>
           <Text style={styles.title}>{item.title}</Text>
@@ -82,16 +83,12 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       borderRadius: 999,
       right: -48,
       top: -58,
-      backgroundColor: theme.mode === 'dark' ? 'rgba(225,29,46,0.24)' : 'rgba(0,87,217,0.14)',
+      // backgroundColor: theme.mode === 'dark' ? 'rgba(225,29,46,0.24)' : 'rgba(0,87,217,0.14)',
       zIndex: 1,
     },
     heroImage: {
       width: '100%',
       height: '100%',
-    },
-    heroOverlay: {
-      ...StyleSheet.absoluteFillObject,
-      backgroundColor: 'rgba(4,8,18,0.2)',
     },
     floatingHeader: {
       position: 'absolute',

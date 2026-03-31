@@ -168,8 +168,6 @@ const SpiderCollectionScreen = ({
               onPress={() => navigation.navigate('CollectionDetail', { item })}
             >
               <View style={styles.imageWrap}>
-                <View style={styles.imageGlowPrimary} />
-                <View style={styles.imageGlowSecondary} />
                 <Image
                   source={
                     item.localImage
@@ -188,8 +186,6 @@ const SpiderCollectionScreen = ({
                     }
                   }}
                 />
-                <View style={styles.imageOverlay} />
-                <View style={styles.imageFrame} />
                 <View style={styles.overlayContent}>
                   <Text style={styles.overlayBadge}>{item.badge || badge}</Text>
                   <Text style={styles.cardTitle}>{item.title}</Text>
@@ -199,12 +195,12 @@ const SpiderCollectionScreen = ({
 
               <View style={styles.cardBody}>
                 <View style={styles.metaRow}>
-                  <Text style={styles.meta}>{item.meta}</Text>
+                  <Text style={styles.meta} numberOfLines={2} >{item.meta}</Text>
                   <View style={styles.exploreChip}>
                     <Text style={styles.exploreChipText}>Tap to Explore</Text>
                   </View>
                 </View>
-                <Text style={styles.description}>{item.description}</Text>
+                <Text style={styles.description} numberOfLines={3} ellipsizeMode='tail' >{item.description}  </Text>
 
                 {item.link ? (
                   <Pressable
@@ -257,7 +253,7 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       width: 260,
       height: 260,
       borderRadius: 999,
-      backgroundColor: theme.mode === 'dark' ? 'rgba(225,29,46,0.28)' : 'rgba(0,87,217,0.16)',
+      // backgroundColor: theme.mode === 'dark' ? 'rgba(225,29,46,0.28)' : 'rgba(0,87,217,0.16)',
       right: -60,
       top: -80,
     },
@@ -395,43 +391,9 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       height: 300,
       backgroundColor: theme.colors.surfaceAlt,
     },
-    imageGlowPrimary: {
-      position: 'absolute',
-      width: 220,
-      height: 220,
-      borderRadius: 999,
-      backgroundColor: theme.mode === 'dark' ? 'rgba(225,29,46,0.16)' : 'rgba(225,29,46,0.12)',
-      top: -26,
-      right: -34,
-      zIndex: 1,
-    },
-    imageGlowSecondary: {
-      position: 'absolute',
-      width: 150,
-      height: 150,
-      borderRadius: 999,
-      backgroundColor: theme.mode === 'dark' ? 'rgba(37,99,235,0.16)' : 'rgba(29,78,216,0.12)',
-      bottom: -28,
-      left: -18,
-      zIndex: 1,
-    },
     image: {
       width: '100%',
       height: '100%',
-    },
-    imageOverlay: {
-      ...StyleSheet.absoluteFillObject,
-      backgroundColor: 'rgba(7,11,22,0.2)',
-    },
-    imageFrame: {
-      position: 'absolute',
-      top: 14,
-      left: 14,
-      right: 14,
-      bottom: 14,
-      borderRadius: 22,
-      borderWidth: 1,
-      borderColor: 'rgba(255,255,255,0.12)',
     },
     overlayContent: {
       position: 'absolute',

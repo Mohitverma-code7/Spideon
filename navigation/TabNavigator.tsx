@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text, View } from 'react-native';
-import MaterialCommunityIcons from 'expo/node_modules/@expo/vector-icons/MaterialCommunityIcons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import HomeStackNavigator from './HomeStackNavigator';
 import CollectionStackNavigator from './CollectionStackNavigator';
 import { useAppTheme } from '../theme/ThemeProvider';

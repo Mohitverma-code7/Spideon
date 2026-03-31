@@ -20,21 +20,19 @@ const SpiderHeroCard = ({ hero, onPress }: SpiderHeroCardProps) => {
   return (
     <Pressable style={styles.card} onPress={onPress}>
       <View style={styles.imageWrap}>
-        <View style={styles.imageBackdrop} />
-        <View style={styles.imageGlowSecondary} />
         {heroImage ? (
-          <Image source={{ uri: heroImage }} style={styles.cardImage} resizeMode="contain" />
+          <Image source={{ uri: heroImage }} style={styles.cardImage} resizeMode="cover" />
         ) : null}
-        <View style={styles.imageOverlay} />
         <View style={styles.gridLine} />
         <View style={styles.imageTopRow}>
           <View style={styles.badge}>
             <Text style={styles.badgeText}>{homeEarth}</Text>
           </View>
-          <View style={styles.arrowChip}>
+          {/* <View style={styles.arrowChip}>
             <Text style={styles.arrowText}>Open</Text>
-          </View>
+          </View> */}
         </View>
+
         <View style={styles.headlineBlock}>
           <Text style={styles.cardTitle}>{hero.name}</Text>
           <Text style={styles.cardSubtitle}>{hero.fullName || 'Identity classified in the multiverse'}</Text>
@@ -47,7 +45,7 @@ const SpiderHeroCard = ({ hero, onPress }: SpiderHeroCardProps) => {
           <View style={styles.dot} />
           <Text style={styles.kickerText}>{hero.voiceActor || 'Multiverse File'}</Text>
         </View>
-        <View style={styles.metaGrid}>
+        {/* <View style={styles.metaGrid}>
           <View style={styles.metaCard}>
             <Text style={styles.metaLabel}>Status</Text>
             <Text style={styles.metaValue}>{hero.status || 'Unknown'}</Text>
@@ -56,8 +54,8 @@ const SpiderHeroCard = ({ hero, onPress }: SpiderHeroCardProps) => {
             <Text style={styles.metaLabel}>Species</Text>
             <Text style={styles.metaValue}>{hero.species || 'Unknown'}</Text>
           </View>
-        </View>
-        <View style={styles.rolePanel}>
+        </View> */}
+        {/* <View style={styles.rolePanel}>
           <Text style={styles.roleLabel}>Profile</Text>
           <Text style={styles.roleValue}>{roleText}</Text>
         </View>
@@ -77,13 +75,13 @@ const SpiderHeroCard = ({ hero, onPress }: SpiderHeroCardProps) => {
             <Text style={styles.statChipValue}>{hero.age || 'N/A'}</Text>
             <Text style={styles.statChipLabel}>Age</Text>
           </View>
-        </View>
+        </View> */}
         <View style={styles.footerRow}>
           <Text style={styles.footerText}>
             {hero.location || 'Unknown location'}
           </Text>
           <View style={styles.openBadge}>
-            <Text style={styles.openBadgeText}>View Dossier</Text>
+            <Text style={styles.openBadgeText}>View Details</Text>
           </View>
         </View>
       </View>
@@ -115,30 +113,9 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       minHeight: 356,
       backgroundColor: theme.mode === 'dark' ? '#071120' : '#DCEBFF',
     },
-    imageBackdrop: {
-      position: 'absolute',
-      width: 270,
-      height: 270,
-      borderRadius: 999,
-      backgroundColor: theme.mode === 'dark' ? 'rgba(214,40,40,0.28)' : 'rgba(193,18,31,0.16)',
-      top: 28,
-    },
-    imageGlowSecondary: {
-      position: 'absolute',
-      width: 180,
-      height: 180,
-      borderRadius: 999,
-      backgroundColor: theme.mode === 'dark' ? 'rgba(37,99,235,0.18)' : 'rgba(29,78,216,0.12)',
-      right: -24,
-      bottom: 54,
-    },
     cardImage: {
-      width: '94%',
-      height: 334,
-    },
-    imageOverlay: {
-      ...StyleSheet.absoluteFillObject,
-      backgroundColor: theme.mode === 'dark' ? 'rgba(4,8,18,0.12)' : 'rgba(8,15,35,0.07)',
+     width: '100%',
+     height: 360,
     },
     gridLine: {
       position: 'absolute',

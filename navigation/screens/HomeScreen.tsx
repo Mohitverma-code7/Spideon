@@ -75,6 +75,8 @@ const HomeScreen = () => {
     setRefreshing(true);
     fetchHeroes();
   };
+ 
+
 
   return (
     <ScrollView
@@ -86,10 +88,7 @@ const HomeScreen = () => {
       }
     >
       <View style={styles.heroPanel}>
-        <View style={styles.orbLarge} />
-        <View style={styles.orbSmall} />
-
-        <View style={styles.heroTopRow}>
+        {/* <View style={styles.heroTopRow}>
           <View style={styles.kicker}>
             <Text style={styles.kickerText}>SPIDEON</Text>
           </View>
@@ -97,15 +96,17 @@ const HomeScreen = () => {
             <View style={styles.liveDot} />
             <Text style={styles.liveText}>Character Intel</Text>
           </View>
-        </View>
+        </View> */}
 
         <Text style={styles.title}>Swing through your Spider-Verse roster</Text>
-        <Text style={styles.subtitle}>
+        {/* <Text style={styles.subtitle}>
           Search variants, explore universes, and open richer Spider cards built from your new character API shape.
-        </Text>
+        </Text> */}
+
+
 
         <View style={styles.searchWrapper}>
-          <Text style={styles.searchIcon}>Find</Text>
+          <Text style={styles.searchIcon}></Text>
           <TextInput
             placeholder="Search Miles, Gwen, Earth-65, Spider-Punk..."
             placeholderTextColor={theme.colors.textMuted}
@@ -118,27 +119,27 @@ const HomeScreen = () => {
         <View style={styles.statRow}>
           <View style={styles.statCard}>
             <Text style={styles.statValue}>{heroes.length}</Text>
-            <Text style={styles.statLabel}>Loaded Profiles</Text>
+            <Text style={styles.statLabel}> Loaded</Text>
           </View>
           <View style={styles.statCard}>
             <Text style={styles.statValue}>{filteredHeroes.length}</Text>
-            <Text style={styles.statLabel}>Matches</Text>
+            <Text style={styles.statLabel}> Matches</Text>
           </View>
         </View>
 
-        <View style={styles.heroActionRow}>
+        {/* <View style={styles.heroActionRow}>
           <Pressable style={styles.primaryButton}>
             <Text style={styles.primaryButtonText}>Spider Society</Text>
           </Pressable>
           <View style={styles.secondaryChip}>
             <Text style={styles.secondaryChipText}>Tap a card for full dossier</Text>
           </View>
-        </View>
+        </View> */}
       </View>
 
       <View style={styles.sectionHeader}>
-        <Text style={styles.sectionTitle}>Spider roster</Text>
-        <Text style={styles.sectionCaption}>Profiles rendered from your new multiverse character response</Text>
+        <Text style={styles.sectionTitle}>Spideon List</Text>
+        
       </View>
 
       {loading ? (
@@ -201,24 +202,6 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       shadowOffset: { width: 0, height: 14 },
       elevation: 10,
       overflow: 'hidden',
-    },
-    orbLarge: {
-      position: 'absolute',
-      width: 220,
-      height: 220,
-      borderRadius: 999,
-      backgroundColor: theme.mode === 'dark' ? 'rgba(214,40,40,0.28)' : 'rgba(29,78,216,0.18)',
-      top: -60,
-      right: -50,
-    },
-    orbSmall: {
-      position: 'absolute',
-      width: 120,
-      height: 120,
-      borderRadius: 999,
-      backgroundColor: theme.mode === 'dark' ? 'rgba(252,163,17,0.15)' : 'rgba(193,18,31,0.12)',
-      bottom: -30,
-      left: -10,
     },
     heroTopRow: {
       flexDirection: 'row',
@@ -304,7 +287,10 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       marginTop: 18,
     },
     statCard: {
-      flex: 1,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'row',
       backgroundColor: theme.mode === 'dark' ? 'rgba(255,255,255,0.07)' : 'rgba(255,255,255,0.72)',
       borderRadius: 22,
       padding: 16,
