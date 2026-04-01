@@ -48,11 +48,11 @@ const HomeScreen = () => {
 
   // 🎥 VIDEO PLAYER (SAFE & STABLE)
   const player = useVideoPlayer(
-    require("../../assets/videos/video1.mp4"),
+    require("../../assets/videos/video2.mp4"),
     (player) => {
-      player.loop = true;   // 🔁 infinite loop
-      player.muted = true;  // 🔇 optional
-      player.play();        // ▶️ play once on init
+      player.loop = true;   
+      player.muted = true;  
+      player.play();        
     }
   );
 

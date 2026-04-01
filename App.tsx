@@ -1,29 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import TabNavigator from './navigation/TabNavigator';
 import { ThemeProvider, useAppTheme } from './theme/ThemeProvider';
-import AppSplashLoader from './components/AppSplashLoader';
+import RootStack from './navigation/RootStack';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+import { View } from 'react-native';
+
+// Keep the splash screen visible while we fetch resources
+SplashScreen.preventAutoHideAsync();
 
 const AppContent = () => {
   const { navigationTheme } = useAppTheme();
-  const [isBooting, setIsBooting] = useState(true);
+  
+  const [fontsLoaded] = useFonts({
+    'BebasNeue-Regular': require('./assets/fonts/BebasNeue-Regular.ttf'),
+  });
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsBooting(false);
-    }, 1600);
+  // This function is called once the layout is ready
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      // This tells the native splash screen to go away
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isBooting) {
-    return <AppSplashLoader />;
+  if (!fontsLoaded) {
+    return null;
   }
 
   return (
-    <NavigationContainer theme={navigationTheme}>
-      <TabNavigator />
-    </NavigationContainer>
+    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+      <NavigationContainer theme={navigationTheme}>
+        <RootStack />
+      </NavigationContainer>
+    </View>
   );
 };
 
