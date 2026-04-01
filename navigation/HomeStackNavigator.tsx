@@ -18,7 +18,6 @@ export type HomeStackParamList = {
 const Stack = createNativeStackNavigator<HomeStackParamList>();
 
 const HomeStackNavigator = () => {
-
   const { theme } = useAppTheme();
   const styles = createStyles(theme);
 

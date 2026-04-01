@@ -30,7 +30,7 @@
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#050510"
     },
     "ios": {
@@ -47,12 +47,7 @@
       ]
     },
     "web": {},
-    "plugins": [
-      "expo-video",
-      "expo-audio",
-      "expo-font",
-      "expo-asset"
-    ]
+    "plugins": ["expo-video", "expo-audio", "expo-font", "expo-asset"]
   },
   "expo.doctor": {
     "reactNativeDirectoryCheck": {

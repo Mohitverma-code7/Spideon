@@ -1,8 +1,8 @@
-import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import SplashScreen from '../components/AppSplashLoader';
-import TabNavigator from './TabNavigator';
+import SplashScreen from "../components/AppSplashLoader";
+import TabNavigator from "./TabNavigator";
 
 export type RootStackParamList = {
   Splash: undefined;

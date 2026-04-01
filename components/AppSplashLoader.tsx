@@ -13,8 +13,6 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/RootStack";
 import Svg, { Path, Line, Circle, G } from "react-native-svg";
 
-
-// ───────── Corner Web ─────────
 const CornerWeb = () => (
   <Svg width={100} height={120} viewBox="0 0 120 120">
     <G stroke="#fff" strokeWidth={0.8} fill="none" opacity={0.35}>
@@ -29,8 +27,6 @@ const CornerWeb = () => (
   </Svg>
 );
 
-
-// ───────── Web Rope ─────────
 const WebRope = ({ height = 420 }) => (
   <Svg width={40} height={height} viewBox={`0 0 40 ${height}`}>
     <Path
@@ -54,8 +50,6 @@ const WebRope = ({ height = 420 }) => (
   </Svg>
 );
 
-
-// ───────── Mini Web ─────────
 const MiniWeb = ({ size = 24 }) => (
   <Svg width={size} height={size} viewBox="0 0 24 24" opacity={0.4}>
     <G stroke="white" strokeWidth={0.7} fill="none">
@@ -69,9 +63,7 @@ const MiniWeb = ({ size = 24 }) => (
   </Svg>
 );
 
-
 const SplashScreen = () => {
-
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
@@ -88,12 +80,9 @@ const SplashScreen = () => {
   const titleO = useRef(new Animated.Value(0)).current;
   const taglineO = useRef(new Animated.Value(0)).current;
 
-
   const startSwing = () => {
-
     swingLoop.current = Animated.loop(
       Animated.sequence([
-
         Animated.timing(swing, {
           toValue: 1,
           duration: 1500,
@@ -121,16 +110,13 @@ const SplashScreen = () => {
           easing: Easing.inOut(Easing.sin),
           useNativeDriver: true,
         }),
-
-      ])
+      ]),
     );
 
     swingLoop.current.start();
   };
 
-
   useEffect(() => {
-
     startSwing();
 
     Animated.parallel([
@@ -155,12 +141,9 @@ const SplashScreen = () => {
       delay: 900,
       useNativeDriver: true,
     }).start();
-
   }, []);
 
-
   const handlePress = () => {
-
     swingLoop.current?.stop();
 
     Animated.sequence([
@@ -178,22 +161,17 @@ const SplashScreen = () => {
         useNativeDriver: true,
       }),
     ]).start(() => {
-
       navigation.replace("MainTabs");
-
     });
   };
-
 
   const rotate = swing.interpolate({
     inputRange: [-1, 1],
     outputRange: ["-4deg", "4deg"],
   });
 
-
   return (
     <View style={styles.container}>
-
       <VideoView
         player={player}
         style={StyleSheet.absoluteFillObject}
@@ -207,18 +185,35 @@ const SplashScreen = () => {
         <CornerWeb />
       </View>
 
-      <View style={[styles.cornerWeb, styles.tr, { transform: [{ rotate: "90deg" }] }]}>
+      <View
+        style={[
+          styles.cornerWeb,
+          styles.tr,
+          { transform: [{ rotate: "90deg" }] },
+        ]}
+      >
         <CornerWeb />
       </View>
 
-      <View style={[styles.cornerWeb, styles.bl, { transform: [{ rotate: "-90deg" }] }]}>
+      <View
+        style={[
+          styles.cornerWeb,
+          styles.bl,
+          { transform: [{ rotate: "-90deg" }] },
+        ]}
+      >
         <CornerWeb />
       </View>
 
-      <View style={[styles.cornerWeb, styles.br, { transform: [{ rotate: "180deg" }] }]}>
+      <View
+        style={[
+          styles.cornerWeb,
+          styles.br,
+          { transform: [{ rotate: "180deg" }] },
+        ]}
+      >
         <CornerWeb />
       </View>
-
 
       <Animated.View
         style={[
@@ -233,13 +228,11 @@ const SplashScreen = () => {
           },
         ]}
       >
-
         <WebRope height={420} />
 
         <View style={styles.webKnot} />
 
         <Pressable style={styles.button} onPress={handlePress}>
-
           <View style={styles.miniWebTR}>
             <MiniWeb />
           </View>
@@ -250,11 +243,8 @@ const SplashScreen = () => {
 
           <Text style={styles.buttonText}>ENTER THE SPIDER-VERSE</Text>
           <Text style={styles.buttonSub}>TAP TO SWING IN</Text>
-
         </Pressable>
-
       </Animated.View>
-
 
       <Animated.View
         style={[
@@ -269,21 +259,16 @@ const SplashScreen = () => {
         </Text>
       </Animated.View>
 
-
       <Animated.Text style={[styles.tagline, { opacity: taglineO }]}>
         WITH GREAT POWER COMES GREAT RESPONSIBILITY
       </Animated.Text>
-
     </View>
   );
 };
 
-
 export default SplashScreen;
 
-
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
     backgroundColor: "#050510",
@@ -393,5 +378,4 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     backgroundColor: "rgba(0,0,0,0.35)",
   },
-
 });

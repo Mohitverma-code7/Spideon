@@ -1,11 +1,11 @@
-import React from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { RouteProp } from '@react-navigation/native';
-import type { HomeStackParamList } from '../HomeStackNavigator';
-import { useAppTheme } from '../../theme/ThemeProvider';
+import React from "react";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { RouteProp } from "@react-navigation/native";
+import type { HomeStackParamList } from "../HomeStackNavigator";
+import { useAppTheme } from "../../theme/ThemeProvider";
 
 type SpiderDetailScreenProps = {
-  route: RouteProp<HomeStackParamList, 'SpiderDetail'>;
+  route: RouteProp<HomeStackParamList, "SpiderDetail">;
 };
 
 const SpiderDetailScreen = ({ route }: SpiderDetailScreenProps) => {
@@ -19,11 +19,7 @@ const SpiderDetailScreen = ({ route }: SpiderDetailScreenProps) => {
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
-      
-      {/* 🔥 HERO SECTION */}
       <View style={styles.heroWrap}>
-      
-
         <Image
           source={{ uri: hero.imageUrl }}
           style={styles.heroImage}
@@ -31,18 +27,15 @@ const SpiderDetailScreen = ({ route }: SpiderDetailScreenProps) => {
         />
 
         <View style={styles.heroText}>
-          <Text style={styles.badge}>{hero.earth || 'Unknown Earth'}</Text>
+          <Text style={styles.badge}>{hero.earth || "Unknown Earth"}</Text>
           <Text style={styles.name}>{hero.name}</Text>
           <Text style={styles.fullName}>
-            {hero.fullName || 'Identity classified'}
+            {hero.fullName || "Identity classified"}
           </Text>
         </View>
       </View>
 
-      {/* 🔥 MAIN PANEL */}
       <View style={styles.panel}>
-
-        {/* BASIC INFO */}
         <Section title="Profile">
           <InfoRow label="Status" value={hero.status} />
           <InfoRow label="Species" value={hero.species} />
@@ -52,55 +45,46 @@ const SpiderDetailScreen = ({ route }: SpiderDetailScreenProps) => {
           <InfoRow label="Age" value={hero.age} />
         </Section>
 
-        {/* STORY */}
         <Section title="Origin">
-          <Text style={styles.text} numberOfLines={3} >
-            {hero.description || 'No data available'}
+          <Text style={styles.text} numberOfLines={3}>
+            {hero.description || "No data available"}
           </Text>
         </Section>
 
-        {/* TAGS */}
         {aliases.length > 0 && (
           <Section title="Aliases">
-            <TagWrap data={aliases.slice(0,2)}  />
+            <TagWrap data={aliases.slice(0, 2)} />
           </Section>
         )}
 
         {abilities.length > 0 && (
           <Section title="Abilities">
-            <TagWrap data={abilities.slice(0,2)} />
+            <TagWrap data={abilities.slice(0, 2)} />
           </Section>
         )}
 
-        {/* LIST */}
         {appearances.length > 0 && (
           <Section title="Appearances">
             {appearances.slice(0, 2).map((item) => (
-              <Text key={item} style={styles.listItem}>• {item}</Text>
+              <Text key={item} style={styles.listItem}>
+                • {item}
+              </Text>
             ))}
           </Section>
         )}
 
-        {/* EXTRA */}
         <Section title="Details">
           <Text style={styles.text}>
-            {hero.nationality || 'Unknown'} • {hero.eyeColor || 'Unknown'} • {hero.hairColor || 'Unknown'}
+            {hero.nationality || "Unknown"} • {hero.eyeColor || "Unknown"} •{" "}
+            {hero.hairColor || "Unknown"}
           </Text>
         </Section>
-
       </View>
     </ScrollView>
   );
 };
 
 export default SpiderDetailScreen;
-
-
-
-
-
-
-/* 🔥 REUSABLE COMPONENTS */
 
 const Section = ({ title, children }: any) => {
   const { theme } = useAppTheme();
@@ -121,7 +105,7 @@ const InfoRow = ({ label, value }: any) => {
   return (
     <View style={styles.row}>
       <Text style={styles.label}>{label}</Text>
-      <Text style={styles.value}>{value || 'Unknown'}</Text>
+      <Text style={styles.value}>{value || "Unknown"}</Text>
     </View>
   );
 };
@@ -141,12 +125,6 @@ const TagWrap = ({ data }: any) => {
   );
 };
 
-
-
-
-
-/* 🔥 STYLES */
-
 const createStyles = (theme: any) =>
   StyleSheet.create({
     screen: {
@@ -158,53 +136,51 @@ const createStyles = (theme: any) =>
       paddingBottom: 40,
     },
 
-    /* HERO */
     heroWrap: {
       height: 420,
       margin: 16,
       borderRadius: 30,
-      overflow: 'hidden',
+      overflow: "hidden",
       backgroundColor: theme.colors.surfaceAlt,
-      justifyContent: 'flex-end',
+      justifyContent: "flex-end",
     },
 
     heroImage: {
-      width: '100%',
-      height: '100%',
+      width: "100%",
+      height: "100%",
     },
 
     heroText: {
-      position: 'absolute',
+      position: "absolute",
       bottom: 20,
       left: 20,
       right: 20,
     },
 
     badge: {
-      alignSelf: 'flex-start',
+      alignSelf: "flex-start",
       backgroundColor: theme.colors.primary,
-      color: '#fff',
+      color: "#fff",
       paddingHorizontal: 12,
       paddingVertical: 6,
       borderRadius: 999,
       fontSize: 11,
-      fontWeight: '800',
+      fontWeight: "800",
       marginBottom: 10,
     },
 
     name: {
       fontSize: 34,
-      fontWeight: '900',
-      color: '#fff',
+      fontWeight: "900",
+      color: "#fff",
     },
 
     fullName: {
-      color: 'rgba(255,255,255,0.85)',
+      color: "rgba(255,255,255,0.85)",
       fontSize: 14,
       marginTop: 6,
     },
 
-    /* PANEL */
     panel: {
       marginTop: 30,
       marginHorizontal: 16,
@@ -222,12 +198,11 @@ const createStyles = (theme: any) =>
 
     sectionTitle: {
       fontSize: 18,
-      fontWeight: '900',
+      fontWeight: "900",
       marginBottom: 10,
       color: theme.colors.text,
     },
 
-    /* ROW */
     row: {
       paddingVertical: 10,
       borderBottomWidth: 1,
@@ -237,28 +212,26 @@ const createStyles = (theme: any) =>
     label: {
       fontSize: 12,
       color: theme.colors.textMuted,
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
       marginBottom: 4,
     },
 
     value: {
       fontSize: 16,
-      fontWeight: '700',
+      fontWeight: "700",
       color: theme.colors.text,
     },
 
-    /* TEXT */
     text: {
       fontSize: 14,
       lineHeight: 22,
       color: theme.colors.textMuted,
-      marginBottom:30
+      marginBottom: 30,
     },
 
-    /* TAGS */
     tagWrap: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
+      flexDirection: "row",
+      flexWrap: "wrap",
       gap: 8,
     },
 
@@ -273,11 +246,10 @@ const createStyles = (theme: any) =>
 
     tagText: {
       fontSize: 12,
-      fontWeight: '700',
+      fontWeight: "700",
       color: theme.colors.text,
     },
 
-    /* LIST */
     listItem: {
       fontSize: 14,
       color: theme.colors.textMuted,

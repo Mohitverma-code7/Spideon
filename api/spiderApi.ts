@@ -10,4 +10,3 @@ export const getSpiderHeroes = async (): Promise<SpiderHero[]> => {
       .replace(/[^a-z0-9-]+/g, "-"),
   }));
 };
-

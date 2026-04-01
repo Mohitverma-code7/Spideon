@@ -1,6 +1,6 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { useAppTheme } from '../theme/ThemeProvider';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { useAppTheme } from "../theme/ThemeProvider";
 
 type ScreenPlaceholderProps = {
   title: string;
@@ -8,7 +8,11 @@ type ScreenPlaceholderProps = {
   badge: string;
 };
 
-const ScreenPlaceholder = ({ title, subtitle, badge }: ScreenPlaceholderProps) => {
+const ScreenPlaceholder = ({
+  title,
+  subtitle,
+  badge,
+}: ScreenPlaceholderProps) => {
   const { theme } = useAppTheme();
   const styles = createStyles(theme);
 
@@ -25,12 +29,12 @@ const ScreenPlaceholder = ({ title, subtitle, badge }: ScreenPlaceholderProps) =
 
 export default ScreenPlaceholder;
 
-const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
+const createStyles = (theme: ReturnType<typeof useAppTheme>["theme"]) =>
   StyleSheet.create({
     screen: {
       flex: 1,
       backgroundColor: theme.colors.background,
-      justifyContent: 'center',
+      justifyContent: "center",
       paddingHorizontal: 18,
       paddingTop: 18,
       paddingBottom: 120,
@@ -41,30 +45,30 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       padding: 26,
       borderWidth: 1,
       borderColor: theme.colors.border,
-      shadowColor: '#000',
-      shadowOpacity: theme.mode === 'dark' ? 0.18 : 0.08,
+      shadowColor: "#000",
+      shadowOpacity: theme.mode === "dark" ? 0.18 : 0.08,
       shadowRadius: 18,
       shadowOffset: { width: 0, height: 10 },
       elevation: 6,
     },
     badge: {
-      alignSelf: 'flex-start',
+      alignSelf: "flex-start",
       backgroundColor: theme.colors.primarySoft,
       color: theme.colors.primary,
       paddingHorizontal: 12,
       paddingVertical: 6,
       borderRadius: 999,
-      overflow: 'hidden',
+      overflow: "hidden",
       fontSize: 12,
-      fontWeight: '700',
-      textTransform: 'uppercase',
+      fontWeight: "700",
+      textTransform: "uppercase",
       letterSpacing: 0.6,
       marginBottom: 14,
     },
     title: {
       color: theme.colors.text,
       fontSize: 30,
-      fontWeight: '800',
+      fontWeight: "800",
       marginBottom: 10,
     },
     subtitle: {

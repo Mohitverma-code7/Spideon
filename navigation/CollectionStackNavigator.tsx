@@ -31,7 +31,9 @@ const screenMap = {
   Movies: MoviesScreen,
 } as const;
 
-const CollectionStackNavigator = ({ screen }: CollectionStackNavigatorProps) => {
+const CollectionStackNavigator = ({
+  screen,
+}: CollectionStackNavigatorProps) => {
   const { theme } = useAppTheme();
   const styles = createStyles(theme);
   const MainScreen = screenMap[screen];
@@ -101,4 +103,3 @@ const createStyles = (theme: any) =>
       marginBottom: 8,
     },
   });
-

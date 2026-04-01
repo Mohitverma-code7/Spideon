@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
   Image,
@@ -10,12 +10,12 @@ import {
   Text,
   TextInput,
   View,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { useAppTheme } from '../theme/ThemeProvider';
-import type { CollectionItem } from '../types/content';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import type { CollectionStackParamList } from '../navigation/CollectionStackNavigator';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { useAppTheme } from "../theme/ThemeProvider";
+import type { CollectionItem } from "../types/content";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { CollectionStackParamList } from "../navigation/CollectionStackNavigator";
 
 type SpiderCollectionScreenProps = {
   badge: string;
@@ -36,24 +36,25 @@ const SpiderCollectionScreen = ({
 }: SpiderCollectionScreenProps) => {
   const { theme } = useAppTheme();
   const styles = createStyles(theme);
-  const navigation = useNavigation<NativeStackNavigationProp<CollectionStackParamList>>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<CollectionStackParamList>>();
   const [items, setItems] = useState<CollectionItem[]>([]);
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [error, setError] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [error, setError] = useState("");
   const defaultFallbackImage =
-    'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/620-spider-man.jpg';
+    "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/620-spider-man.jpg";
 
   const fetchItems = async () => {
     try {
-      setError('');
+      setError("");
       const data = await loadItems();
       setItems(data);
       setFailedImages({});
     } catch {
-      setError('Could not load this Spider-Verse section right now.');
+      setError("Could not load this Spider-Verse section right now.");
     } finally {
       setLoading(false);
       setRefreshing(false);
@@ -73,9 +74,9 @@ const SpiderCollectionScreen = ({
 
     return items.filter((item) =>
       [item.title, item.subtitle, item.description, item.meta]
-        .join(' ')
+        .join(" ")
         .toLowerCase()
-        .includes(normalizedQuery)
+        .includes(normalizedQuery),
     );
   }, [items, searchQuery]);
 
@@ -102,7 +103,11 @@ const SpiderCollectionScreen = ({
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
       refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={theme.colors.primary} />
+        <RefreshControl
+          refreshing={refreshing}
+          onRefresh={onRefresh}
+          tintColor={theme.colors.primary}
+        />
       }
     >
       <View style={styles.heroPanel}>
@@ -125,11 +130,11 @@ const SpiderCollectionScreen = ({
         <View style={styles.statsRow}>
           <View style={styles.statCard}>
             <Text style={styles.statValue}>{items.length}</Text>
-            <Text style={styles.statLabel}>   Items</Text>
+            <Text style={styles.statLabel}> Items</Text>
           </View>
           <View style={styles.statCard}>
             <Text style={styles.statValue}>{filteredItems.length}</Text>
-            <Text style={styles.statLabel}>   Visible</Text>
+            <Text style={styles.statLabel}> Visible</Text>
           </View>
         </View>
       </View>
@@ -165,7 +170,7 @@ const SpiderCollectionScreen = ({
             <Pressable
               key={item.id}
               style={styles.card}
-              onPress={() => navigation.navigate('CollectionDetail', { item })}
+              onPress={() => navigation.navigate("CollectionDetail", { item })}
             >
               <View style={styles.imageWrap}>
                 <Image
@@ -182,7 +187,10 @@ const SpiderCollectionScreen = ({
                   resizeMode="cover"
                   onError={() => {
                     if (!item.localImage) {
-                      setFailedImages((current) => ({ ...current, [item.id]: true }));
+                      setFailedImages((current) => ({
+                        ...current,
+                        [item.id]: true,
+                      }));
                     }
                   }}
                 />
@@ -195,12 +203,20 @@ const SpiderCollectionScreen = ({
 
               <View style={styles.cardBody}>
                 <View style={styles.metaRow}>
-                  <Text style={styles.meta} numberOfLines={2} >{item.meta}</Text>
+                  <Text style={styles.meta} numberOfLines={2}>
+                    {item.meta}
+                  </Text>
                   <View style={styles.exploreChip}>
                     <Text style={styles.exploreChipText}>Tap to Explore</Text>
                   </View>
                 </View>
-                <Text style={styles.description} numberOfLines={3} ellipsizeMode='tail' >{item.description}  </Text>
+                <Text
+                  style={styles.description}
+                  numberOfLines={3}
+                  ellipsizeMode="tail"
+                >
+                  {item.description}{" "}
+                </Text>
 
                 {item.link ? (
                   <Pressable
@@ -210,7 +226,9 @@ const SpiderCollectionScreen = ({
                       openLink(item.link);
                     }}
                   >
-                    <Text style={styles.linkButtonText}>{item.linkLabel || 'Open Link'}</Text>
+                    <Text style={styles.linkButtonText}>
+                      {item.linkLabel || "Open Link"}
+                    </Text>
                   </Pressable>
                 ) : null}
               </View>
@@ -223,7 +241,7 @@ const SpiderCollectionScreen = ({
 
 export default SpiderCollectionScreen;
 
-const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
+const createStyles = (theme: ReturnType<typeof useAppTheme>["theme"]) =>
   StyleSheet.create({
     screen: {
       flex: 1,
@@ -235,21 +253,24 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       paddingBottom: 120,
     },
     heroPanel: {
-      backgroundColor: theme.mode === 'dark' ? theme.colors.backgroundAlt : theme.colors.backgroundAlt,
+      backgroundColor:
+        theme.mode === "dark"
+          ? theme.colors.backgroundAlt
+          : theme.colors.backgroundAlt,
       borderRadius: 36,
       padding: 24,
       marginBottom: 24,
       borderWidth: 1,
       borderColor: theme.colors.border,
-      overflow: 'hidden',
-      shadowColor: '#000',
-      shadowOpacity: theme.mode === 'dark' ? 0.24 : 0.1,
+      overflow: "hidden",
+      shadowColor: "#000",
+      shadowOpacity: theme.mode === "dark" ? 0.24 : 0.1,
       shadowRadius: 22,
       shadowOffset: { width: 0, height: 12 },
       elevation: 8,
     },
     heroGlow: {
-      position: 'absolute',
+      position: "absolute",
       width: 260,
       height: 260,
       borderRadius: 999,
@@ -258,86 +279,94 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       top: -80,
     },
     badge: {
-      alignSelf: 'flex-start',
-      backgroundColor: theme.mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.82)',
+      alignSelf: "flex-start",
+      backgroundColor:
+        theme.mode === "dark"
+          ? "rgba(255,255,255,0.08)"
+          : "rgba(255,255,255,0.82)",
       color: theme.colors.primary,
       paddingHorizontal: 13,
       paddingVertical: 8,
       borderRadius: 999,
-      overflow: 'hidden',
+      overflow: "hidden",
       fontSize: 12,
-      fontWeight: '800',
-      textTransform: 'uppercase',
+      fontWeight: "800",
+      textTransform: "uppercase",
       letterSpacing: 0.7,
       marginBottom: 14,
     },
     title: {
       color: theme.colors.text,
       fontSize: 34,
-      fontWeight: '900',
+      fontWeight: "900",
       lineHeight: 40,
       marginBottom: 12,
-      maxWidth: '88%',
+      maxWidth: "88%",
     },
     subtitle: {
       color: theme.colors.textMuted,
       fontSize: 15,
       lineHeight: 23,
       marginBottom: 20,
-      maxWidth: '92%',
+      maxWidth: "92%",
     },
     searchWrapper: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: '#FFFFFF',
+      flexDirection: "row",
+      alignItems: "center",
+      backgroundColor: "#FFFFFF",
       borderRadius: 22,
       paddingHorizontal: 16,
       paddingVertical: 8,
       marginBottom: 18,
       borderWidth: 1,
-      borderColor: theme.mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(9,17,31,0.05)',
+      borderColor:
+        theme.mode === "dark" ? "rgba(255,255,255,0.08)" : "rgba(9,17,31,0.05)",
     },
     searchLabel: {
-      color: '#64748B',
+      color: "#64748B",
       fontSize: 11,
-      fontWeight: '800',
-      textTransform: 'uppercase',
+      fontWeight: "800",
+      textTransform: "uppercase",
       letterSpacing: 0.8,
       marginRight: 10,
     },
     searchInput: {
       flex: 1,
-      color: '#0F172A',
+      color: "#0F172A",
       fontSize: 15,
       paddingVertical: 10,
     },
     statsRow: {
-      flexDirection: 'row',
+      flexDirection: "row",
       gap: 14,
       padding: 8,
-      justifyContent: 'center',
+      justifyContent: "center",
     },
     statCard: {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: theme.mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.8)',
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor:
+        theme.mode === "dark"
+          ? "rgba(255,255,255,0.08)"
+          : "rgba(255,255,255,0.8)",
       borderRadius: 22,
       padding: 16,
       borderWidth: 1,
-      borderColor: theme.mode === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(9,17,31,0.04)',
+      borderColor:
+        theme.mode === "dark" ? "rgba(255,255,255,0.05)" : "rgba(9,17,31,0.04)",
     },
     statValue: {
       color: theme.colors.text,
       fontSize: 24,
-      fontWeight: '900',
+      fontWeight: "900",
     },
     statLabel: {
       color: theme.colors.textMuted,
       marginTop: 6,
       fontSize: 13,
-      fontWeight: '700',
+      fontWeight: "700",
       padding: 4,
     },
     sectionHeader: {
@@ -347,7 +376,7 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
     sectionTitle: {
       color: theme.colors.text,
       fontSize: 24,
-      fontWeight: '900',
+      fontWeight: "900",
     },
     sectionCaption: {
       color: theme.colors.textMuted,
@@ -359,76 +388,77 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       backgroundColor: theme.colors.surface,
       borderRadius: 26,
       padding: 24,
-      alignItems: 'center',
+      alignItems: "center",
       borderWidth: 1,
       borderColor: theme.colors.border,
     },
     feedbackTitle: {
       color: theme.colors.text,
       fontSize: 18,
-      fontWeight: '800',
+      fontWeight: "800",
       marginBottom: 8,
     },
     feedbackText: {
       color: theme.colors.textMuted,
       fontSize: 14,
       lineHeight: 20,
-      textAlign: 'center',
+      textAlign: "center",
       marginTop: 10,
     },
     card: {
       backgroundColor: theme.colors.surface,
       borderRadius: 34,
-      overflow: 'hidden',
+      overflow: "hidden",
       marginBottom: 22,
-      width: '100%',
+      width: "100%",
       maxWidth: 350,
-      alignSelf: 'center',
+      alignSelf: "center",
       borderWidth: 1,
-      borderColor: theme.mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(8,15,35,0.08)',
-      shadowColor: '#000',
-      shadowOpacity: theme.mode === 'dark' ? 0.28 : 0.1,
+      borderColor:
+        theme.mode === "dark" ? "rgba(255,255,255,0.08)" : "rgba(8,15,35,0.08)",
+      shadowColor: "#000",
+      shadowOpacity: theme.mode === "dark" ? 0.28 : 0.1,
       shadowRadius: 22,
       shadowOffset: { width: 0, height: 12 },
       elevation: 8,
     },
     imageWrap: {
-      position: 'relative',
+      position: "relative",
       height: 300,
       backgroundColor: theme.colors.surfaceAlt,
     },
     image: {
-      width: '100%',
-      height: '100%',
+      width: "100%",
+      height: "100%",
     },
     overlayContent: {
-      position: 'absolute',
+      position: "absolute",
       left: 20,
       right: 20,
       bottom: 20,
     },
     overlayBadge: {
-      alignSelf: 'flex-start',
+      alignSelf: "flex-start",
       backgroundColor: theme.colors.primary,
       color: theme.colors.white,
       paddingHorizontal: 12,
       paddingVertical: 6,
       borderRadius: 999,
-      overflow: 'hidden',
+      overflow: "hidden",
       fontSize: 11,
-      fontWeight: '800',
-      textTransform: 'uppercase',
+      fontWeight: "800",
+      textTransform: "uppercase",
       letterSpacing: 0.6,
       marginBottom: 10,
     },
     cardTitle: {
-      color: '#ff0000',
+      color: "#ff0000",
       fontSize: 31,
-      fontWeight: '900',
+      fontWeight: "900",
       marginBottom: 4,
     },
     cardSubtitle: {
-      color: 'rgba(255,255,255,0.88)',
+      color: "rgba(255,255,255,0.88)",
       fontSize: 14,
       lineHeight: 21,
     },
@@ -438,22 +468,23 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       paddingBottom: 18,
     },
     metaRow: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
       gap: 12,
       marginBottom: 10,
     },
     meta: {
       color: theme.colors.primary,
       fontSize: 12,
-      fontWeight: '800',
-      textTransform: 'uppercase',
+      fontWeight: "800",
+      textTransform: "uppercase",
       letterSpacing: 0.7,
       flex: 1,
     },
     exploreChip: {
-      backgroundColor: theme.mode === 'dark' ? 'rgba(255,255,255,0.08)' : '#EEF4FF',
+      backgroundColor:
+        theme.mode === "dark" ? "rgba(255,255,255,0.08)" : "#EEF4FF",
       borderRadius: 999,
       paddingHorizontal: 10,
       paddingVertical: 7,
@@ -463,8 +494,8 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
     exploreChipText: {
       color: theme.colors.text,
       fontSize: 10,
-      fontWeight: '800',
-      textTransform: 'uppercase',
+      fontWeight: "800",
+      textTransform: "uppercase",
       letterSpacing: 0.6,
     },
     description: {
@@ -474,7 +505,7 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       marginBottom: 18,
     },
     linkButton: {
-      alignSelf: 'flex-start',
+      alignSelf: "flex-start",
       backgroundColor: theme.colors.primary,
       borderRadius: 999,
       paddingHorizontal: 18,
@@ -483,8 +514,8 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
     linkButtonText: {
       color: theme.colors.white,
       fontSize: 13,
-      fontWeight: '800',
-      textTransform: 'uppercase',
+      fontWeight: "800",
+      textTransform: "uppercase",
       letterSpacing: 0.6,
     },
   });
