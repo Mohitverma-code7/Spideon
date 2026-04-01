@@ -17,7 +17,8 @@
     },
     "web": {},
     "plugins": [
-      "expo-video"
+      "expo-video",
+      "expo-audio"
     ]
   }
 }

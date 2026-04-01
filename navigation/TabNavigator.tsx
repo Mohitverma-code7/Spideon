@@ -1,11 +1,13 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 import HomeStackNavigator from './HomeStackNavigator';
 import CollectionStackNavigator from './CollectionStackNavigator';
 import { useAppTheme } from '../theme/ThemeProvider';
 import ThemeToggleButton from '../components/ThemeToggleButton';
+import { playTabSound } from "../utils/playTabSound";
 
 const Tab = createBottomTabNavigator();
 
@@ -21,6 +23,11 @@ const TabNavigator = () => {
   const { theme } = useAppTheme();
   const styles = createStyles(theme);
 
+  // Common listener to play sound on press
+  const soundListener = {
+    tabPress: () => playTabSound(),
+  };
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -33,15 +40,9 @@ const TabNavigator = () => {
           fontSize: 20,
         },
         headerTitleAlign: 'left',
-        headerLeftContainerStyle: {
-          paddingLeft: 8,
-        },
-        headerRightContainerStyle: {
-          paddingRight: 10,
-        },
-        headerTitleContainerStyle: {
-          paddingHorizontal: 8,
-        },
+        headerLeftContainerStyle: { paddingLeft: 8 },
+        headerRightContainerStyle: { paddingRight: 10 },
+        headerTitleContainerStyle: { paddingHorizontal: 8 },
         headerShadowVisible: false,
         headerRight: () => <ThemeToggleButton />,
         tabBarShowLabel: true,
@@ -49,6 +50,7 @@ const TabNavigator = () => {
         tabBarLabelStyle: styles.tabLabel,
         tabBarActiveTintColor: theme.colors.primary,
         tabBarInactiveTintColor: theme.colors.tabIcon,
+
         tabBarIcon: ({ focused }) => (
           <View style={[styles.iconWrap, focused ? styles.iconWrapActive : null]}>
             <MaterialCommunityIcons
@@ -60,17 +62,42 @@ const TabNavigator = () => {
         ),
       })}
     >
-      <Tab.Screen name="Home" component={HomeStackNavigator} options={{ headerShown: false }} />
-      <Tab.Screen name="Spider" options={{ headerShown: false }}>
+      <Tab.Screen
+        name="Home"
+        component={HomeStackNavigator}
+        options={{ headerShown: false }}
+        listeners={soundListener}
+      />
+
+      <Tab.Screen
+        name="Spider"
+        options={{ headerShown: false }}
+        listeners={soundListener}
+      >
         {() => <CollectionStackNavigator screen="Spider" />}
       </Tab.Screen>
-      <Tab.Screen name="Costume" options={{ headerShown: false }}>
+
+      <Tab.Screen
+        name="Costume"
+        options={{ headerShown: false }}
+        listeners={soundListener}
+      >
         {() => <CollectionStackNavigator screen="Costume" />}
       </Tab.Screen>
-      <Tab.Screen name="Comics" options={{ headerShown: false }}>
+
+      <Tab.Screen
+        name="Comics"
+        options={{ headerShown: false }}
+        listeners={soundListener}
+      >
         {() => <CollectionStackNavigator screen="Comics" />}
       </Tab.Screen>
-      <Tab.Screen name="Movies" options={{ headerShown: false }}>
+
+      <Tab.Screen
+        name="Movies"
+        options={{ headerShown: false }}
+        listeners={soundListener}
+      >
         {() => <CollectionStackNavigator screen="Movies" />}
       </Tab.Screen>
     </Tab.Navigator>
@@ -79,7 +106,7 @@ const TabNavigator = () => {
 
 export default TabNavigator;
 
-const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
+const createStyles = (theme: any) =>
   StyleSheet.create({
     tabBar: {
       position: 'absolute',

@@ -46,7 +46,7 @@ const CollectionDetailScreen = ({ route }: CollectionDetailScreenProps) => {
 
       <View style={styles.panel}>
         <Text style={styles.meta}>{item.meta}</Text>
-        <Text style={styles.description} numberOfLines={5}>{item.description}</Text>
+        <Text style={styles.description} numberOfLines={3}>{item.description}</Text>
 
         {item.link ? (
           <Pressable style={styles.linkButton} onPress={openLink}>

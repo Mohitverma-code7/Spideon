@@ -28,7 +28,7 @@ const HomeScreen = () => {
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState('');
 
-  
+  // 🔥 Fetch Data
   const fetchHeroes = async () => {
     try {
       setError('');
@@ -46,23 +46,17 @@ const HomeScreen = () => {
     fetchHeroes();
   }, []);
 
-  
+  // 🎥 VIDEO PLAYER (SAFE & STABLE)
   const player = useVideoPlayer(
-    require("../../assets/videos/video1.mp4")
+    require("../../assets/videos/video1.mp4"),
+    (player) => {
+      player.loop = true;   // 🔁 infinite loop
+      player.muted = true;  // 🔇 optional
+      player.play();        // ▶️ play once on init
+    }
   );
 
-  useEffect(() => {
-    if (!player) return;
-
-    player.loop = true;
-    player.play();
-
-    return () => {
-      player.pause(); // cleanup (VERY IMPORTANT)
-    };
-  }, [player]);
-
-  /* ---------------- FILTER ---------------- */
+  // 🔍 Filter
   const filteredHeroes = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
 
@@ -88,7 +82,6 @@ const HomeScreen = () => {
     fetchHeroes();
   };
 
- 
   return (
     <ScrollView
       style={styles.screen}
@@ -98,24 +91,18 @@ const HomeScreen = () => {
       }
       showsVerticalScrollIndicator={false}
     >
-      
       <View style={styles.heroPanel}>
+        <Text style={styles.title}>OUR REAL HERO</Text>
 
-        <Text style={styles.title}>
-          OUR MAIN HEROS
-        </Text>
+        {/* 🎥 VIDEO */}
+        <VideoView
+          player={player}
+          style={styles.video}
+          nativeControls={false}
+          contentFit="cover"
+        />
 
-        
-        {player && (
-          <VideoView
-            player={player}
-            style={styles.video}
-            nativeControls={false}
-            contentFit='cover'
-          />
-        )}
-
-        
+        {/* 🔍 SEARCH */}
         <View style={styles.searchWrapper}>
           <TextInput
             placeholder="Search Spider heroes..."
@@ -126,6 +113,7 @@ const HomeScreen = () => {
           />
         </View>
 
+        {/* 📊 STATS */}
         <View style={styles.statRow}>
           <View style={styles.statCard}>
             <Text style={styles.statValue}>{heroes.length}</Text>
@@ -164,7 +152,6 @@ const HomeScreen = () => {
 
 export default HomeScreen;
 
-
 const createStyles = (theme: any) =>
   StyleSheet.create({
     screen: {
@@ -177,7 +164,7 @@ const createStyles = (theme: any) =>
     },
 
     heroPanel: {
-      backgroundColor: theme.mode === 'dark' ? theme.colors.backgroundAlt : theme.colors.backgroundAlt,
+      backgroundColor: theme.colors.backgroundAlt,
       borderRadius: 30,
       padding: 20,
       marginBottom: 20,
@@ -191,7 +178,7 @@ const createStyles = (theme: any) =>
     title: {
       fontSize: 26,
       fontWeight: '900',
-      color: theme.colors.text,
+      color: theme.colors.primary,
       marginBottom: 12,
     },
 
@@ -208,7 +195,6 @@ const createStyles = (theme: any) =>
       borderRadius: 16,
       paddingHorizontal: 12,
       marginBottom: 12,
-      borderWidth: 1,
     },
 
     searchInput: {
@@ -224,11 +210,13 @@ const createStyles = (theme: any) =>
 
     statCard: {
       flex: 1,
-      backgroundColor: theme.mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.8)',
+      backgroundColor:
+        theme.mode === 'dark'
+          ? 'rgba(255,255,255,0.08)'
+          : 'rgba(255,255,255,0.8)',
       borderRadius: 16,
       padding: 12,
       alignItems: 'center',
-      borderWidth: 1,
     },
 
     statValue: {

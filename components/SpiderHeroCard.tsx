@@ -18,7 +18,7 @@ const SpiderHeroCard = ({ hero, onPress }: SpiderHeroCardProps) => {
   const roleText = hero.occupation?.join(', ') || 'Spider-powered hero navigating the multiverse.';
 
   return (
-    <Pressable style={styles.card} onPress={onPress}>
+    <View style={styles.card}>
       <View style={styles.imageWrap}>
         {heroImage ? (
           <Image source={{ uri: heroImage }} style={styles.cardImage} resizeMode="cover" />
@@ -81,11 +81,13 @@ const SpiderHeroCard = ({ hero, onPress }: SpiderHeroCardProps) => {
             {hero.location || 'Unknown location'}
           </Text>
           <View style={styles.openBadge}>
-            <Text style={styles.openBadgeText}>View Details</Text>
+            <Pressable onPress={onPress}>
+              <Text style={styles.openBadgeText}>View Details</Text>
+            </Pressable>
           </View>
         </View>
       </View>
-    </Pressable>
+    </View>
   );
 };
 
