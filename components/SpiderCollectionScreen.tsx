@@ -422,7 +422,7 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       marginBottom: 10,
     },
     cardTitle: {
-      color: '#FFFFFF',
+      color: '#ff0000',
       fontSize: 31,
       fontWeight: '900',
       marginBottom: 4,

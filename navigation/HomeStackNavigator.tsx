@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View, Text, StyleSheet } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { View, Text, StyleSheet, Pressable } from "react-native";
 
 import HomeScreen from "./screens/HomeScreen";
 import SpiderDetailScreen from "./screens/SpiderDetailScreen";
@@ -19,8 +18,18 @@ export type HomeStackParamList = {
 const Stack = createNativeStackNavigator<HomeStackParamList>();
 
 const HomeStackNavigator = () => {
+
   const { theme } = useAppTheme();
   const styles = createStyles(theme);
+
+  const scrollRef = useRef<any>(null);
+
+  const scrollToTop = () => {
+    scrollRef.current?.scrollTo({
+      y: 0,
+      animated: true,
+    });
+  };
 
   return (
     <Stack.Navigator
@@ -28,15 +37,11 @@ const HomeStackNavigator = () => {
         headerStyle: {
           backgroundColor: theme.colors.surface,
         },
-
         headerShadowVisible: false,
-
         headerTitleAlign: "left",
-
         contentStyle: {
           backgroundColor: theme.colors.background,
         },
-
         headerRight: () => (
           <View style={{ marginRight: 6 }}>
             <ThemeToggleButton />
@@ -46,16 +51,18 @@ const HomeStackNavigator = () => {
     >
       <Stack.Screen
         name="HomeMain"
-        component={HomeScreen}
         options={{
           headerTitle: () => (
-            <View style={styles.headerContainer}>
-            
-              <Text style={styles.logoText}>SPIDEON</Text>
-            </View>
+            <Pressable onPress={scrollToTop}>
+              <View style={styles.headerContainer}>
+                <Text style={styles.logoText}>SPIDEON</Text>
+              </View>
+            </Pressable>
           ),
         }}
-      />
+      >
+        {(props) => <HomeScreen {...props} scrollRef={scrollRef} />}
+      </Stack.Screen>
 
       <Stack.Screen
         name="SpiderDetail"
@@ -82,10 +89,6 @@ const createStyles = (theme: any) =>
       alignItems: "center",
     },
 
-    icon: {
-      marginRight: 6,
-    },
-
     logoText: {
       fontSize: 26,
       fontWeight: "900",
@@ -94,4 +97,3 @@ const createStyles = (theme: any) =>
       marginBottom: 8,
     },
   });
-

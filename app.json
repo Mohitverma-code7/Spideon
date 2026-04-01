@@ -1,4 +1,27 @@
 {
+  "name": "Spideon",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "expo": "^48.0.0",
+    "expo-av": "^13.2.0",
+    "expo-audio": "^13.0.0",
+    "expo-font": "^11.0.0",
+    "expo-asset": "^8.10.0",
+    "@expo/vector-icons": "^13.0.0",
+    "react": "18.2.0",
+    "react-native": "0.71.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
   "expo": {
     "name": "Spideon",
     "slug": "Spideon",
@@ -6,19 +29,34 @@
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "splash": {
+      "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#050510"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
-      "predictiveBackGestureEnabled": false
+      "package": "com.mohitcodes07.Spideon",
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "RECORD_AUDIO",
+        "MODIFY_AUDIO_SETTINGS",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_MEDIA_PLAYBACK"
+      ]
     },
     "web": {},
     "plugins": [
       "expo-video",
-      "expo-audio"
+      "expo-audio",
+      "expo-font",
+      "expo-asset"
     ]
+  },
+  "expo.doctor": {
+    "reactNativeDirectoryCheck": {
+      "exclude": ["expo-av"]
+    }
   }
 }

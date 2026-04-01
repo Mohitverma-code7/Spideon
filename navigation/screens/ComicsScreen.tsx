@@ -6,7 +6,7 @@ const ComicsScreen = () => {
   return (
     <SpiderCollectionScreen
       badge="SPIDEON"
-      title="Essential Spider-Man comics and story arcs"
+      title="Essential Spider-Man comics "
       subtitle="See key issues, iconic runs, and multiverse events with art cards and quick links."
       sectionTitle="Comic spotlight"
       sectionCaption="Cover-style cards with direct links for deeper reading"

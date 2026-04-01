@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, useRef } from 'react';
 import {
   ActivityIndicator,
   RefreshControl,
@@ -7,17 +7,26 @@ import {
   Text,
   TextInput,
   View,
+  Pressable,
 } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
+
 import SpiderHeroCard from '../../components/SpiderHeroCard';
 import type { HomeStackParamList } from '../HomeStackNavigator';
 import { getSpiderHeroes } from '../../api/spiderApi';
 import { useAppTheme } from '../../theme/ThemeProvider';
 import type { SpiderHero } from '../../types/spider';
+
 import { VideoView, useVideoPlayer } from "expo-video";
 
-const HomeScreen = () => {
+type Props = {
+  scrollRef?: any;
+};
+
+const HomeScreen = ({ scrollRef }: Props) => {
+
   const { theme } = useAppTheme();
   const styles = createStyles(theme);
   const navigation = useNavigation<NativeStackNavigationProp<HomeStackParamList>>();
@@ -28,7 +37,7 @@ const HomeScreen = () => {
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState('');
 
-  // 🔥 Fetch Data
+  // Fetch Data
   const fetchHeroes = async () => {
     try {
       setError('');
@@ -46,17 +55,26 @@ const HomeScreen = () => {
     fetchHeroes();
   }, []);
 
-  // 🎥 VIDEO PLAYER (SAFE & STABLE)
-  const player = useVideoPlayer(
-    require("../../assets/videos/video2.mp4"),
-    (player) => {
-      player.loop = true;   
-      player.muted = true;  
-      player.play();        
-    }
+  // Video Player
+  const playerRef = useRef(
+    useVideoPlayer(require("../../assets/videos/video2.mp4"))
   );
 
-  // 🔍 Filter
+  const player = playerRef.current;
+
+  useEffect(() => {
+    player.loop = true;
+    player.muted = true;
+    player.play();
+  }, []);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      player.play();
+    }, [])
+  );
+
+  // Filter Heroes
   const filteredHeroes = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
 
@@ -82,8 +100,13 @@ const HomeScreen = () => {
     fetchHeroes();
   };
 
+  const clearSearch = () => {
+    setSearchQuery('');
+  };
+
   return (
     <ScrollView
+      ref={scrollRef}
       style={styles.screen}
       contentContainerStyle={styles.content}
       refreshControl={
@@ -91,10 +114,11 @@ const HomeScreen = () => {
       }
       showsVerticalScrollIndicator={false}
     >
+
       <View style={styles.heroPanel}>
         <Text style={styles.title}>OUR REAL HERO</Text>
 
-        {/* 🎥 VIDEO */}
+        {/* VIDEO */}
         <VideoView
           player={player}
           style={styles.video}
@@ -102,8 +126,16 @@ const HomeScreen = () => {
           contentFit="cover"
         />
 
-        {/* 🔍 SEARCH */}
+        {/* SEARCH */}
         <View style={styles.searchWrapper}>
+
+          <Ionicons
+            name="search"
+            size={20}
+            color={theme.colors.textMuted}
+            style={styles.searchIcon}
+          />
+
           <TextInput
             placeholder="Search Spider heroes..."
             placeholderTextColor={theme.colors.textMuted}
@@ -111,14 +143,26 @@ const HomeScreen = () => {
             value={searchQuery}
             onChangeText={setSearchQuery}
           />
+
+          {searchQuery.length > 0 && (
+            <Pressable onPress={clearSearch}>
+              <Ionicons
+                name="close-circle"
+                size={20}
+                color={theme.colors.textMuted}
+              />
+            </Pressable>
+          )}
+
         </View>
 
-        {/* 📊 STATS */}
+        {/* STATS */}
         <View style={styles.statRow}>
           <View style={styles.statCard}>
             <Text style={styles.statValue}>{heroes.length}</Text>
             <Text style={styles.statLabel}>Loaded</Text>
           </View>
+
           <View style={styles.statCard}>
             <Text style={styles.statValue}>{filteredHeroes.length}</Text>
             <Text style={styles.statLabel}>Matches</Text>
@@ -158,6 +202,7 @@ const createStyles = (theme: any) =>
       flex: 1,
       backgroundColor: theme.colors.background,
     },
+
     content: {
       padding: 16,
       paddingBottom: 100,
@@ -195,9 +240,17 @@ const createStyles = (theme: any) =>
       borderRadius: 16,
       paddingHorizontal: 12,
       marginBottom: 12,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 8,
+    },
+
+    searchIcon: {
+      marginLeft: 4,
     },
 
     searchInput: {
+      flex: 1,
       height: 45,
       fontSize: 16,
       color: '#000',

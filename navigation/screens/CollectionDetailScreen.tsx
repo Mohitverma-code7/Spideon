@@ -98,6 +98,7 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       left: 22,
       right: 22,
       bottom: 22,
+      
     },
     badge: {
       alignSelf: 'flex-start',
@@ -114,7 +115,7 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       marginBottom: 12,
     },
     title: {
-      color: '#FFFFFF',
+      color: '#ff0000',
       fontSize: 34,
       fontWeight: '900',
       marginBottom: 6,
@@ -141,7 +142,7 @@ const createStyles = (theme: ReturnType<typeof useAppTheme>['theme']) =>
       elevation: 8,
     },
     meta: {
-      color: theme.colors.primary,
+      color: theme. colors.text,
       fontSize: 12,
       fontWeight: '800',
       textTransform: 'uppercase',
